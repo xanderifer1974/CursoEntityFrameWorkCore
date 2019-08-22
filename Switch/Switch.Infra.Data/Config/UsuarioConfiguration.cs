@@ -28,6 +28,9 @@ namespace Switch.Infra.Data.Config
                 .IsRequired();
             builder.Property(u => u.DataNascimento)
                 .IsRequired();
+            builder.HasOne(u => u.Identificacao)//Faz relacionamento 1 para 1
+                .WithOne(i => i.Usuario)
+                .HasForeignKey<Identificacao>(i => i.UsuarioId);
         }
     }
 }
