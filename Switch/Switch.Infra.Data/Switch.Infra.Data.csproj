@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190823164419_AddRelacionamentoPostagemPorConfiguracao.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.0">
       <PrivateAssets>all</PrivateAssets>
