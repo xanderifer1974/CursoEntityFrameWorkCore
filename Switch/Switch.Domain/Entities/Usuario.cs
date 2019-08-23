@@ -15,7 +15,9 @@ namespace Switch.Domain.Entities
         public string UrlFoto { get; set; }
         public SexoEnum Sexo { get; set; }
         public virtual Identificacao Identificacao { get; set; }
-        public virtual ICollection<Postagem> Postagens { get; set; } //No lado do relacionamento de um para muitos , na parte muito e necessário utilizar o Icollection na classe para muitos.       
+        public virtual ICollection<Postagem> Postagens { get; set; } //No lado do relacionamento de um para muitos , na parte muito e necessário utilizar o Icollection na classe para muitos.
+        public virtual ICollection<UsuarioGrupo> UsuarioGrupos { get; set; }
+
 
     }
 }
