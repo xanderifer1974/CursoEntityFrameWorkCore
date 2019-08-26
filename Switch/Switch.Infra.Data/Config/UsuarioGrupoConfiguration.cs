@@ -11,8 +11,7 @@ namespace Switch.Infra.Data.Config
             builder.HasKey(u => new { u.UsuarioId, u.GrupoId });
             builder.Property(u => u.DataCriacao)
                     .IsRequired();
-            builder.Property(u => u.EhAdministrador);
-                
+            builder.Property(u => u.EhAdministrador);            
 
 
 
