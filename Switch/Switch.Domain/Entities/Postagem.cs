@@ -11,6 +11,7 @@ namespace Switch.Domain.Entities
         public virtual Usuario Usuario { get; set; } //Propriedade de navegação apontando para usuário.
         public int GrupoId { get; set; }
         public virtual Grupo Grupo { get; set;}
+        public string UrlConteudo { get; set; }
 
     }
 }
