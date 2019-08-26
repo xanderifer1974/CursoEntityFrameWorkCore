@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Switch.Domain.Entities
 {
@@ -12,6 +13,7 @@ namespace Switch.Domain.Entities
         public int GrupoId { get; set; }
         public virtual Grupo Grupo { get; set;}
         public string UrlConteudo { get; set; }
+        public virtual ICollection<Comentario> Comentarios { get; set; }
 
     }
 }
