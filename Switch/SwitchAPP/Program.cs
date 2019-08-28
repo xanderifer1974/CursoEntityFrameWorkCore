@@ -34,7 +34,13 @@ namespace SwitchAPP
                     dbcontext.GetService<ILoggerFactory>().AddProvider(new Logger());
                     //dbcontext.Usuarios.Add(usuario);
                     //dbcontext.SaveChanges();
-                    var resultado = dbcontext.Usuarios.ToList();
+                    //var resultado = dbcontext.Usuarios.ToList();
+                    var resultado = dbcontext.Usuarios.Where(u => u.Nome =="Luciana").ToList();
+
+                    //foreach(var us in resultado)
+                    //{
+
+                    //}
                 }
 
             }
