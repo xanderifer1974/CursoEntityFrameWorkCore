@@ -32,15 +32,43 @@ namespace SwitchAPP
                 using (var dbcontext = new SwitchContext(optionsBuilder.Options))
                 {
                     dbcontext.GetService<ILoggerFactory>().AddProvider(new Logger());
+                    //=====================================
+                    //----Adiciona um usuário na tabela ---
                     //dbcontext.Usuarios.Add(usuario);
                     //dbcontext.SaveChanges();
+                    //====================================
+                    // LISTA TODOS OS USUÁRIOS 
+                    //----------------------------------------
                     //var resultado = dbcontext.Usuarios.ToList();
-                    var resultado = dbcontext.Usuarios.Where(u => u.Nome =="Luciana").ToList();
-
+                    //==============================================
+                    //CONSULTA USUÁRIO POR NOME
+                    //===================================================
+                    //var resultado = dbcontext.Usuarios.Where(u => u.Nome =="Luciana").ToList();
                     //foreach(var us in resultado)
                     //{
 
                     //}
+                    //============================================================================
+                    //Cria um usuário novo e consulta através do método First. Em seguida associa a uma variável
+                    //que cria uma nova instância do usuário
+                    //====================================================================================
+                    //var usuarioNovo = CriarUsuario("Natan","Spinelli");
+                    //dbcontext.Add(usuarioNovo);
+                    //dbcontext.SaveChanges();
+                    //Lista o registro encontrado, porém se não encontrar dispara um exceção
+                    //===========================================================================
+                    //var usuarioRetorno = dbcontext.Usuarios.First(u => u.Nome == "Natan");
+                    //==========================================================================
+                    //Lista a primeira ocorrência procurada, senão encontrar lista nulo.
+                    var usuarioRetorno = dbcontext.Usuarios.FirstOrDefault(u => u.Nome == "Natan2");
+
+                    if (usuarioRetorno == null)
+                    {
+                        Console.WriteLine("Usuário não encontrado");
+                    }
+
+                    Console.WriteLine("Nome do usuário criado ==>  " + usuarioRetorno.Nome);
+
                 }
 
             }
@@ -53,6 +81,24 @@ namespace SwitchAPP
             Console.WriteLine("Ok");
             Console.ReadKey();
            
+        }
+        /// <summary>
+        /// Método para criar usuário
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public static Usuario CriarUsuario(string nome, string sobrenome)
+        {
+            return new Usuario()
+            {
+                Nome = nome,
+                SobreNome = sobrenome,
+                Senha = "abc123",
+                Email = "usuario@teste.com",
+                DataNascimento = DateTime.Now,
+                Sexo = Switch.Domain.Enums.SexoEnum.Masculino,
+                UrlFoto = @"c:\temp"
+            };
         }
     }
 }
