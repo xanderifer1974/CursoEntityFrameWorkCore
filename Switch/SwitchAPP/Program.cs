@@ -5,6 +5,7 @@ using Switch.Domain.Entities;
 using Switch.Infra.CrossCutting.Logging;
 using Switch.Infra.Data.Context;
 using System;
+using System.Linq;
 
 namespace SwitchAPP
 {
@@ -31,8 +32,9 @@ namespace SwitchAPP
                 using (var dbcontext = new SwitchContext(optionsBuilder.Options))
                 {
                     dbcontext.GetService<ILoggerFactory>().AddProvider(new Logger());
-                    dbcontext.Usuarios.Add(usuario);
-                    dbcontext.SaveChanges();
+                    //dbcontext.Usuarios.Add(usuario);
+                    //dbcontext.SaveChanges();
+                    var resultado = dbcontext.Usuarios.ToList();
                 }
 
             }
