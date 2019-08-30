@@ -60,15 +60,30 @@ namespace SwitchAPP
                     //var usuarioRetorno = dbcontext.Usuarios.First(u => u.Nome == "Natan");
                     //==========================================================================
                     //Lista a primeira ocorrência procurada, senão encontrar lista nulo.
-                    var usuarioRetorno = dbcontext.Usuarios.FirstOrDefault(u => u.Nome == "Natan2");
+                    //var usuarioRetorno = dbcontext.Usuarios.FirstOrDefault(u => u.Nome == "Natan2");
 
-                    if (usuarioRetorno == null)
-                    {
-                        Console.WriteLine("Usuário não encontrado");
-                    }
+                    //if (usuarioRetorno == null)
+                    //{
+                    //    Console.WriteLine("Usuário não encontrado");
+                    //}
 
-                    Console.WriteLine("Nome do usuário criado ==>  " + usuarioRetorno.Nome);
+                    //Console.WriteLine("Nome do usuário criado ==>  " + usuarioRetorno.Nome);
+                    //===============================================================================
+                    // ************** DELETANDO UM USUÁRIO NA BASE ************************************
+                    //===============================================================================
+                    //var usuarioPai = CriarUsuario("Nilson", "Ferreira");
+                    //var usuarioMae = CriarUsuario("Nilson", "Ferreira");
 
+                    //dbcontext.Usuarios.Add(usuarioPai);
+                    //dbcontext.Usuarios.Add(usuarioMae);
+                    //dbcontext.SaveChanges();
+
+                    //var totalUsuario = dbcontext.Usuarios.Count(u => u.Nome == "Nilson");
+                    //var DelUsuario = dbcontext.Usuarios.FirstOrDefault(u => u.Nome == "Nilson");
+                    ////dbcontext.Usuarios.Remove(DelUsuario); //Alternativa 1
+                    //dbcontext.Remove<Usuario>(DelUsuario); //Alternativa 2
+                    ////dbcontext.SaveChanges();
+                    //=================================================================================
                 }
 
             }
