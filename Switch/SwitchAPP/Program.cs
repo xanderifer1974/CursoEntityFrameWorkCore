@@ -84,6 +84,13 @@ namespace SwitchAPP
                     //dbcontext.Remove<Usuario>(DelUsuario); //Alternativa 2
                     ////dbcontext.SaveChanges();
                     //=================================================================================
+                    //********** ATUALIZANDO UM REGISTRO NA BASE DE DADOS *****************************
+                    //=================================================================================
+                    //var UserNatan = dbcontext.Usuarios.FirstOrDefault(u => u.Nome == "Natan");
+                    //UserNatan.Senha = "natan123"; 
+                    //dbcontext.Update<Usuario>(UserNatan); //Dessa forma, atualiza todas as colunas da tabela. Não informando este comando, atualiza somente senha.
+                    //dbcontext.SaveChanges();
+                    ///==========================================================================================
                 }
 
             }
